@@ -81,8 +81,10 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	char	*start;
 
+	if (!s)
+        return (NULL);
 	res = ft_calloc((ft_count(s, c) + 1), sizeof(char *));
-	if (!res || !s)
+	if (!res)
 		return (0);
 	start = NULL;
 	res = ft_returnstr(s, c, start, res);
